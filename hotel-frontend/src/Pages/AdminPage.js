@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { getRooms, createRoom } from '../services/api';
 import { Container, Button, TextField, Typography, List, ListItem, ListItemText } from '@mui/material';
+import imagen from '../assets/admin.jpg';
+import '../App.css';
+
+
 
 const AdminPage = () => {
   const [rooms, setRooms] = useState([]);
@@ -46,8 +50,10 @@ const AdminPage = () => {
   };
 
   return (
-    <Container>
-      <Typography variant="h4">Gestión de Habitaciones</Typography>
+    <Container style={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
+      <div className="card card-body shadow-lg">
+      <Typography variant="h4" 
+        className='titulo'>Gestión de Habitaciones </Typography>
 
       {error && <Typography color="error">{error}</Typography>}
 
@@ -65,17 +71,33 @@ const AdminPage = () => {
               </ListItem>
             ))
           ) : (
-            <Typography>No hay habitaciones disponibles</Typography>
+            <Typography style={{
+              color: 'white'  // Estilo del label
+              }}>No hay habitaciones disponibles</Typography>
           )}
         </List>
       )}
-
-      <Typography variant="h6">Crear Nueva Habitación</Typography>
-      <TextField label="Número" value={newRoom.number} onChange={(e) => setNewRoom({ ...newRoom, number: e.target.value })} />
-      <TextField label="Tipo" value={newRoom.type} onChange={(e) => setNewRoom({ ...newRoom, type: e.target.value })} />
-      <TextField label="Precio" value={newRoom.price} onChange={(e) => setNewRoom({ ...newRoom, price: e.target.value })} />
-      <Button onClick={handleCreateRoom} variant="contained">Crear Habitación</Button>
+      
+      <Typography variant="h6" className='titulo' >Crear Nueva Habitación </Typography>
+      <TextField label="Número" InputLabelProps={{
+                                          style: { color: 'white' } // Estilo del label
+                                        }} 
+                                        value={newRoom.number} onChange={(e) => setNewRoom({ ...newRoom, number: e.target.value })} />
+      <TextField label="Tipo" InputLabelProps={{
+                                          style: { color: 'white' } // Estilo del label
+                                        }}  value={newRoom.type} onChange={(e) => setNewRoom({ ...newRoom, type: e.target.value })} />
+      <TextField label="Precio" InputLabelProps={{
+                                        style: { color: 'white' } // Estilo del label
+                                      }} value={newRoom.price} onChange={(e) => setNewRoom({ ...newRoom, price: e.target.value })} />
+      <Button onClick={handleCreateRoom} variant="contained" style={{color:'#ffe4c4','background-color': '#202020',
+                                                                     'border-color': 'slategray',}}
+                                        >Crear Habitación</Button>
+      </div>
+      <div className="col-md-6" style={{ padding: '100px' }}>
+      <img src={imagen }  class='.estilo-profile' alt='' style={{'borderRadius':'60px', 'height': '600px','width': '800px'}} />
+      </div>
     </Container>
+    
   );
 };
 

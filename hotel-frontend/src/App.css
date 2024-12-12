@@ -1,3 +1,19 @@
+.texto{background-color: #cccccc48 !important;
+  border-color: slategray!important;
+  border-radius: 30px !important;
+  width: 80% !important;
+  padding: 10px !important;
+  border-width: 0px !important;
+  margin-bottom:20px !important;}
+.titulo{ 
+  color: #deb887 !important;
+  font-size: 2.5rem !important;
+  font-Family: 'Arial, sans-serif'!important;
+ }
+ .estiloTexfile{
+  width: '80%'!important;
+  border-width: '0px'!important;
+  margin-bottom: '20px'!important;}
 .App {
   text-align: center;
 }
