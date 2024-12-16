@@ -5,7 +5,7 @@ import imagen from '../assets/3094352.jpg';
 import '../App.css';
 
 
-const Login = ({ onLogin }) => {
+const Login = () => {
     const [registrando, setRegistrando] = useState(false); // Modo de registro o login
     // Este método simula el proceso de login o registro
     
