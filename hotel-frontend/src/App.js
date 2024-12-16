@@ -5,7 +5,7 @@ import AdminPage from './Pages/AdminPage';
 import ReceptionistPage from './Pages/ReceptionistPage';
 import CustomerPage from './Pages/CustomerPage';
 import CashierPage from './Pages/CashierPage';
-
+import MenuAdmin from './Pages/MenuAdmin';
 
 
 
@@ -20,6 +20,7 @@ const App = () => {
         <Route path="/customer" element={<CustomerPage />} />
         <Route path="/cashier" element={<CashierPage/>} />
         <Route path="/login" element={<Login/>} />
+        <Route path="/menuAdmin" element={<MenuAdmin/>} />
       </Routes>
     </Router>
   );

@@ -52,6 +52,7 @@ const AdminPage = () => {
   return (
     <Container style={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
       <div className="card card-body shadow-lg">
+        
       <Typography variant="h4" 
         className='titulo'>Gestión de Habitaciones </Typography>
 
@@ -94,7 +95,8 @@ const AdminPage = () => {
                                         >Crear Habitación</Button>
       </div>
       <div className="col-md-6" style={{ padding: '100px' }}>
-      <img src={imagen }  class='.estilo-profile' alt='' style={{'borderRadius':'60px', 'height': '600px','width': '800px'}} />
+        
+      <img src={imagen }  class='.estilo-profile' alt='' style={{'borderRadius':'60px', 'height': '400px','width': '500px'}} />
       </div>
     </Container>
     

@@ -1,3 +1,24 @@
+.fullscreen-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/public/imagenes/hotel2.jpg'); /* Ruta de tu imagen */
+  background-size: cover; /* Asegura que la imagen cubra toda la ventana */
+  background-position: center; /* Centra la imagen */
+  z-index: -1; /* Coloca la imagen detrás del contenido */
+}
+.fullscreen-bg2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/public/imagenes/mitad2.webp'); /* Ruta de tu imagen */
+  background-size: cover; /* Asegura que la imagen cubra toda la ventana */
+  background-position: center; /* Centra la imagen */
+  z-index: -1; /* Coloca la imagen detrás del contenido */}
 .texto{background-color: #cccccc48 !important;
   border-color: slategray!important;
   border-radius: 30px !important;
@@ -9,6 +30,7 @@
   color: #deb887 !important;
   font-size: 2.5rem !important;
   font-Family: 'Arial, sans-serif'!important;
+  text-align: center !important;
  }
  .estiloTexfile{
   width: '80%'!important;
