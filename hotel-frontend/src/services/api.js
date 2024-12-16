@@ -1,9 +1,10 @@
 import axios from 'axios';
 
 const API_URL = 'http://127.0.0.1:8000/api/';
+const New_URL = 'http://127.0.0.1:8000/Login/';
 
 const api = axios.create({
-  baseURL: API_URL,
+  baseURL: API_URL, New_URL
 });
 
 
@@ -123,7 +124,7 @@ export const getAvailableReservations = async () => {
     }
   };
 
-export const loginUser = async (email, password) => {
+export const loginUser = async (email, password,) => {
   try {
     const response = await api.post('/login/', { email, password });
     return response.data;
@@ -134,9 +135,9 @@ export const loginUser = async (email, password) => {
 };
 
 
-export const registerUser = async (name, email, password) => {
+export const registerUser = async (name, email, password, cedula) => {
   try {
-    const response = await api.post('/register/', { username: name, email, password });
+    const response = await api.post('/register/', { username: name, email, password, cedula });
     return response.data;
   } catch (error) {
     console.error("Error registering user:", error);
