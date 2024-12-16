@@ -29,10 +29,10 @@ export const createRoom = async (roomData) => {
 
 
 export const searchRooms = async (filters) => {
-  const { type, available } = filters;
+  const { type, available, price } = filters;
   try {
     const response = await api.get('rooms/search/', {
-      params: { type, available },
+      params: { type, available, price },
     });
     return response.data;
   } catch (error) {
