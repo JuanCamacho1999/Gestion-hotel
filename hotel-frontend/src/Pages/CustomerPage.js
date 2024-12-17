@@ -57,7 +57,8 @@ const CustomerPage = () => {
 
   return (
     <Container>
-      <Typography variant="h4" gutterBottom>Ver Habitaciones</Typography>
+      <div className='fullscreen-bg2'></div>
+      <Typography variant="h4" gutterBottom className='titulo2'>Ver Habitaciones</Typography>
 
       {loading && <CircularProgress />}
 
@@ -65,6 +66,9 @@ const CustomerPage = () => {
 
       <TextField
         label="Buscar habitación"
+        InputLabelProps={{
+          style: { color: 'white' } // Estilo del label
+        }} 
         variant="outlined"
         fullWidth
         value={searchQuery}
@@ -94,13 +98,17 @@ const CustomerPage = () => {
 
     
       {searchQuery && filteredRooms.length === 0 && (
-        <Typography variant="body1" color="textSecondary">
+        <Typography variant="body1" color="textSecondary"
+        style= {{ 'color': 'white' }}>
           No se encontraron habitaciones que coincidan con la búsqueda.
         </Typography>
       )}
      
       {rooms.length === 0 && (
-        <Typography variant="body1" color="textSecondary">
+        <Typography variant="body1" color="textSecondary"
+        style= {{ 'color': 'white' }} // Estilo del label
+         >
+          
           No hay habitaciones disponibles en este momento.
         </Typography>
       )}

@@ -40,13 +40,18 @@ const AddInvoicePage = () => {
   };
 
   return (
-    <Container>
-      <Typography variant="h4">Agregar Factura a una Reservación</Typography>
+    <Container >
+      <div className='cushier'></div>
+      <Typography variant="h4" className='titulo3'>Agregar Factura a una Reservación</Typography>
       {error && <Alert severity="error">{error}</Alert>}
       {success && <Alert severity="success">{success}</Alert>}
 
       <FormControl fullWidth margin="normal">
-        <InputLabel>Seleccionar Reservación</InputLabel>
+        <InputLabel
+        
+          style= {{ color: 'white' }} // Estilo del label
+        
+        >Seleccionar Reservación</InputLabel>
         <Select
           value={selectedReservation}
           onChange={(e) => setSelectedReservation(e.target.value)}
@@ -61,6 +66,9 @@ const AddInvoicePage = () => {
 
       <TextField
         label="Total"
+        InputLabelProps={{
+          style: { color: 'white' } // Estilo del label
+        }} 
         type="number"
         value={total}
         onChange={(e) => setTotal(e.target.value)}
@@ -69,6 +77,9 @@ const AddInvoicePage = () => {
       />
       <TextField
         label="Descuento"
+        InputLabelProps={{
+          style: { color: 'white' } // Estilo del label
+        }} 
         type="number"
         value={discount}
         onChange={(e) => setDiscount(e.target.value)}
@@ -77,6 +88,9 @@ const AddInvoicePage = () => {
       />
       <TextField
         label="Método de Pago"
+        InputLabelProps={{
+          style: { color: 'white' } // Estilo del label
+        }} 
         value={paymentMethod}
         onChange={(e) => setPaymentMethod(e.target.value)}
         fullWidth

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getRooms, getServices, createReservation, searchGuestByName } from '../services/api';
 import { Container, TextField, Button, MenuItem, Select, InputLabel, FormControl, Typography, CircularProgress, Alert } from '@mui/material';
-
+import imagenProfile from "../assets/sala.jpg";
 const ReceptionistPage = () => {
   const [rooms, setRooms] = useState([]);
   const [services, setServices] = useState([]);
@@ -74,21 +74,25 @@ const ReceptionistPage = () => {
   };
 
   return (
-    <Container>
-      <Typography variant="h4">Registrar Reservación</Typography>
+    <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
+       <div className="col-md-6" style={{ padding: '20px' }}>
+      <Typography variant="h4" className='titulo'>Registrar Reservación</Typography>
 
       {loading && <CircularProgress />}
       {error && <Alert severity="error">{error}</Alert>}
 
       <TextField
         label="Nombre del Huésped"
+        InputLabelProps={{
+          style: { color: 'white' } // Estilo del label
+        }} 
         value={reservation.guest_name}
         onChange={handleGuestNameChange} // Llamar a la función para actualizar el nombre y buscar al huésped
         fullWidth
       />
 
       <FormControl fullWidth>
-        <InputLabel>Habitación</InputLabel>
+        <InputLabel style={{color: 'white'}}>Habitación</InputLabel>
         <Select
           value={reservation.room}
           onChange={(e) => setReservation({ ...reservation, room: e.target.value })}
@@ -105,6 +109,9 @@ const ReceptionistPage = () => {
 
       <TextField
         label="Fecha de Check-In"
+        InputLabelProps={{
+          style: { color: 'white' } // Estilo del label
+        }} 
         type="date"
         value={reservation.check_in}
         onChange={(e) => setReservation({ ...reservation, check_in: e.target.value })}
@@ -112,6 +119,9 @@ const ReceptionistPage = () => {
       />
       <TextField
         label="Fecha de Check-Out"
+        InputLabelProps={{
+          style: { color: 'white' } // Estilo del label
+        }} 
         type="date"
         value={reservation.check_out}
         onChange={(e) => setReservation({ ...reservation, check_out: e.target.value })}
@@ -119,7 +129,12 @@ const ReceptionistPage = () => {
       />
 
       <Button onClick={handleSubmitReservation} variant="contained">Registrar Reservación</Button>
-    </Container>
+      </div>
+      <div className="col-md-6" style={{ padding: '0px' }}>
+                <img src={imagenProfile }  class='.estilo-profile' alt='' style={{'borderRadius':'150px', 'height': '750px','width': '900px'}} />          
+              </div>
+    
+    </div>
   );
 };
 
